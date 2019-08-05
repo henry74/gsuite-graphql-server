@@ -6,7 +6,8 @@ import { merge } from "lodash";
 const modules = [
   require("./sheets"),
   require("./calendars"),
-  require("./shared")
+  require("./shared"),
+  require("./gmail")
 ];
 
 const mainDefs = [

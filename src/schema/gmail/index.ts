@@ -1,4 +1,4 @@
-const modules = [require("./queries"), require("./types")];
+const modules = [require("./types")];
 
 export const resolvers = modules.reduce((state, m) => {
   if (!m.resolvers) {
