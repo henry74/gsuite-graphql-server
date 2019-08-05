@@ -9,7 +9,8 @@ const GOOGLE_OAUTH2_REDIRECT_URL = envVars().GOOGLE_OAUTH2_REDIRECT_URL;
 const SCOPES = [
   "https://www.googleapis.com/auth/calendar.readonly",
   "https://www.googleapis.com/auth/spreadsheets.readonly",
-  "https://www.googleapis.com/auth/drive.readonly"
+  "https://www.googleapis.com/auth/drive.readonly",
+  "https://www.googleapis.com/auth/gmail.readonly"
 ];
 const TOKEN_PATH = envVars().TOKEN_PATH;
 
