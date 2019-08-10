@@ -37,6 +37,10 @@ export interface Query {
   aggregateEvents?: Maybe<(Maybe<CalendarEvent>)[]>;
   /** Generate auth URL for authentication */
   authUrl: string;
+  /** Fetch labels for Gmail */
+  labels?: Maybe<(Maybe<Label>)[]>;
+  /** Fetch messages from Gmail */
+  messages?: Maybe<MessageList>;
 }
 
 export interface Spreadsheet {
@@ -113,6 +117,66 @@ export interface Time {
   timeZone?: Maybe<string>;
 }
 
+export interface Label {
+  id?: Maybe<string>;
+
+  name?: Maybe<string>;
+
+  type?: Maybe<string>;
+}
+
+export interface MessageList {
+  messages?: Maybe<(Maybe<Message>)[]>;
+
+  nextPageToken?: Maybe<string>;
+
+  resultSizeEstimate?: Maybe<number>;
+}
+
+export interface Message {
+  id: string;
+
+  threadId?: Maybe<string>;
+
+  internalDate?: Maybe<string>;
+
+  headers?: Maybe<Headers>;
+
+  labelIds?: Maybe<(Maybe<string>)[]>;
+
+  snippet?: Maybe<string>;
+
+  textPlain?: Maybe<string>;
+
+  textHtml?: Maybe<string>;
+
+  attachments?: Maybe<(Maybe<Attachment>)[]>;
+
+  inline?: Maybe<(Maybe<Attachment>)[]>;
+}
+
+export interface Headers {
+  from?: Maybe<string>;
+
+  date?: Maybe<string>;
+
+  subject?: Maybe<string>;
+
+  to?: Maybe<string>;
+
+  cc?: Maybe<string>;
+}
+
+export interface Attachment {
+  filename?: Maybe<string>;
+
+  mimeType?: Maybe<string>;
+
+  size?: Maybe<number>;
+
+  attachmentId?: Maybe<string>;
+}
+
 export interface Mutation {
   unused?: Maybe<string>;
 
@@ -151,6 +215,20 @@ export interface AggregateEventsQueryArgs {
   calendarList: (Maybe<string>)[];
 
   maxResults?: Maybe<number>;
+}
+export interface LabelsQueryArgs {
+  emailAddress?: Maybe<string>;
+}
+export interface MessagesQueryArgs {
+  emailAddress?: Maybe<string>;
+
+  query?: Maybe<string>;
+
+  maxResults?: Maybe<number>;
+
+  labelIds?: Maybe<(Maybe<string>)[]>;
+
+  nextPageToken?: Maybe<string>;
 }
 export interface SetOAuthCodeMutationArgs {
   code: string;

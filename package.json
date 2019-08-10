@@ -20,7 +20,7 @@
     "build": "rm -rf dist && tsc",
     "build:watch": "rm -rf dist && tsc -w",
     "start": "yarn build && node dist/index.js",
-    "start:dev": "npm-run-all --parallel build:watch inspect",
+    "start:dev": "ts-node-dev --transpile-only src/index.ts",
     "inspect": "nodemon --inspect=0.0.0.0:9229 dist/index.js",
     "generate": "./tools/generate-gql.sh",
     "authorize": "ts-node ./tools/authorize.ts"
@@ -33,6 +33,7 @@
     "dotenv-safe": "^6.1.0",
     "express": "^4.17.1",
     "fs-extra": "^8.1.0",
+    "gmail-api-parse-message": "^2.1.0",
     "googleapis": "^40.0.0",
     "graphql": "^14.3.1",
     "graphql-middleware": "^3.0.2",
@@ -46,8 +47,8 @@
     "graphql-code-generator": "^0.18.2",
     "graphql-codegen-typescript-server": "^0.18.2",
     "nodemon": "^1.19.1",
-    "npm-run-all": "^4.1.5",
     "ts-node": "^8.2.0",
+    "ts-node-dev": "^1.0.0-pre.40",
     "typescript": "^3.4.5"
   },
   "resolutions": {

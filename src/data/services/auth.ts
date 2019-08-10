@@ -10,7 +10,8 @@ const GOOGLE_OAUTH2_REDIRECT_URL = envVars().GOOGLE_OAUTH2_REDIRECT_URL;
 const SCOPES = [
   "https://www.googleapis.com/auth/calendar.readonly",
   "https://www.googleapis.com/auth/spreadsheets.readonly",
-  "https://www.googleapis.com/auth/drive.readonly"
+  "https://www.googleapis.com/auth/drive.readonly",
+  "https://www.googleapis.com/auth/gmail.readonly"
 ];
 const TOKEN_PATH = envVars().TOKEN_PATH;
 
@@ -39,7 +40,7 @@ export const fetchAuthClient = async (): Promise<OAuth2Client> => {
 export const setOAuthCode = async (code: string) => {
   const { tokens } = await authClient.getToken(code);
   fs.writeJson(TOKEN_PATH, tokens);
-  logger.debug("Token stored to", TOKEN_PATH);
+  logger.debug(`Token stored to ${TOKEN_PATH}`);
   return tokens;
 };
 
