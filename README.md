@@ -18,16 +18,19 @@ yarn authorize
 
 ## Building Docker Images
 
-Build image for x86 architecture
+Build and push image for x86 architecture
 
 ```bash
 docker build -t your.registry.domain/path/gsuite-graphql-api .
+docker push your.registry.domain/path/gsuite-graphql-api
 ```
 
-Build image on x86 architecture for ARM7 architecture (e.g. Raspberry Pi)
+Build and push image on x86 architecture for ARM7 architecture (e.g. Raspberry Pi)
 
 ```bash
 docker build -f armv7hf.Dockerfile -t your.registry.domain/path/gsuite-graphql-api:armv7hf .
+docker push your.registry.domain/path/gsuite-graphql-api:armv7hf
+
 ```
 
 ## API Usage
