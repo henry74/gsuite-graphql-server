@@ -43,12 +43,14 @@ export const fetchMessages = async (
       labelIds,
       pageToken: nextPageToken
     });
-    const messages = data.messages.map(message => {
-      const { id } = message;
-      return {
-        id
-      };
-    });
+    const messages = data.messages
+      ? data.messages.map(message => {
+          const { id } = message;
+          return {
+            id
+          };
+        })
+      : [];
     return {
       messages,
       resultSizeEstimate: data.resultSizeEstimate,

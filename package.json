@@ -43,7 +43,6 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
-    "@types/graphql": "^14.2.0",
     "graphql-code-generator": "^0.18.2",
     "graphql-codegen-typescript-server": "^0.18.2",
     "nodemon": "^1.19.1",
