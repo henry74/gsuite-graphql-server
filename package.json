@@ -26,7 +26,7 @@
     "authorize": "ts-node ./tools/authorize.ts"
   },
   "dependencies": {
-    "apollo-server-express": "^2.5.0",
+    "apollo-server-express": "^2.14.2",
     "chalk": "^2.4.2",
     "compression": "^1.7.4",
     "dotenv": "^8.0.0",
