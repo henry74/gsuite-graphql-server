@@ -1,7 +1,8 @@
-schema: http://localhost:9898/graphql
 overwrite: true
+schema: "http://localhost:9898/graphql"
+documents: null
 generates:
-  ./src/generatedTypes.ts:
+  src/generatedTypes.ts:
     plugins:
-      - typescript-common
-      - typescript-server
+      - "typescript"
+      - "typescript-resolvers"

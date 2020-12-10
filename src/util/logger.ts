@@ -1,6 +1,5 @@
 import { createLogger, format, transports } from "winston";
-import { isObject } from "util";
-import chalk from "chalk";
+import * as chalk from "chalk";
 const { combine, printf, timestamp } = format;
 
 const { NODE_ENV } = process.env;
@@ -11,7 +10,7 @@ const chalkColors = {
 };
 
 function formatObject(param) {
-  if (isObject(param)) {
+  if (typeof param === 'object') {
     return JSON.stringify(param);
   }
   return `"${param}"`;
